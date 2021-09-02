@@ -1,0 +1,5 @@
+[user]
+	name = Jason Saporta
+	email = jasons89@gmail.com
+[core]
+	editor = nvim
