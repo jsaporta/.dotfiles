@@ -46,6 +46,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Safe copying and moving
+alias cp='cp -i'
+alias mv='mv -i'
 
 # Manual changes begin here
 export PATH="/home/jsaporta/.local/bin:$PATH"
