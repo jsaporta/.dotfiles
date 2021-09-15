@@ -51,6 +51,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Manual changes begin here
+alias envgo='source .venv/bin/activate'
+
 export PATH="/home/jsaporta/.local/bin:$PATH"
 
 # Also note the 3 lines of pyenv config added to .profile
