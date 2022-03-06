@@ -1,3 +1,11 @@
+# Enable history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+export HISTFILE=~/.histfile
+
+setopt HIST_FIND_NO_DUPS
+
 # Enable vi mode
 bindkey -v
 bindkey "^?" backward-delete-char
@@ -46,14 +54,18 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias kubectl="minikube kubectl --"
+
 # Safe copying and moving
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias icat="kitty +kitten icat"
+
 # Manual changes begin here
 alias envgo='source .venv/bin/activate'
 
-export PATH="/home/jsaporta/.local/bin:$PATH"
+export PATH="/opt/gradle/gradle-7.2/bin:/home/jsaporta/.local/bin:$PATH"
 
 # Also note the 3 lines of pyenv config added to .profile
 eval "$(pyenv init -)"
@@ -65,8 +77,16 @@ export NVM_DIR="$HOME/.nvm"
 
 unsetopt BEEP
 
+fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zsh/gradle-completion $fpath)
+export PATH="$PATH:/home/jsaporta/.local/share/coursier/bin"
+
 source /home/jsaporta/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select
 source /home/jsaporta/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 eval "$(starship init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
