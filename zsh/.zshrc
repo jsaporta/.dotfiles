@@ -4,7 +4,7 @@ export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 export HISTFILE=~/.histfile
 
-setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
 
 # Enable vi mode
 bindkey -v
@@ -65,7 +65,7 @@ alias icat="kitty +kitten icat"
 # Manual changes begin here
 alias envgo='source .venv/bin/activate'
 
-export PATH="/opt/gradle/gradle-7.2/bin:/home/jsaporta/.local/bin:$PATH"
+export PATH="/opt/gradle/gradle-7.2/bin:$PATH"
 
 # Also note the 3 lines of pyenv config added to .profile
 eval "$(pyenv init -)"
@@ -81,6 +81,9 @@ fpath=(~/.zsh/completion $fpath)
 fpath=(~/.zsh/gradle-completion $fpath)
 export PATH="$PATH:/home/jsaporta/.local/share/coursier/bin"
 
+
+export PATH=$PATH:/usr/local/go/bin
+
 source /home/jsaporta/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select
@@ -90,3 +93,9 @@ eval "$(starship init zsh)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+PATH="/home/jsaporta/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jsaporta/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jsaporta/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jsaporta/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jsaporta/perl5"; export PERL_MM_OPT;

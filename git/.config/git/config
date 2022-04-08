@@ -1,5 +1,13 @@
 [user]
 	name = Jason Saporta
 	email = jasons89@gmail.com
+  signingkey = jasons89@gmail.com
+
+[commit]
+  gpgsign = true
+
 [core]
 	editor = nvim
+
+[tag]
+  gpgSign = true
