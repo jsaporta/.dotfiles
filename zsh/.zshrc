@@ -5,6 +5,7 @@ export SAVEHIST=1000000000
 export HISTFILE=~/.histfile
 
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 
 # Enable vi mode
 bindkey -v

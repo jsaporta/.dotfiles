@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 -- Other options
 -- vim.opt.inccommand = "nosplit"
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- Searching
 vim.opt.hlsearch = false
