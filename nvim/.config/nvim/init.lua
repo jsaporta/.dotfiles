@@ -1,6 +1,9 @@
 require ('plugins')
 require ('lsp')
 
+vim.cmd[[set termguicolors]]
+vim.cmd[[colorscheme base16-tomorrow-night]]
+
 vim.g.mapleader = " "
 
 -- Other options
