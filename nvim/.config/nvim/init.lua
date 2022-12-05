@@ -1,15 +1,18 @@
-require ('plugins')
-require ('lsp')
+require "plugins"
+require "lsp"
+require "lualine-config"
 
-vim.cmd[[set termguicolors]]
+-- vim.cmd[[set termguicolors]]
 vim.cmd[[colorscheme base16-tomorrow-night]]
 
 vim.g.mapleader = " "
 
+vim.opt.termguicolors = true
+
 -- Other options
 -- vim.opt.inccommand = "nosplit"
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Searching
 vim.opt.hlsearch = false
@@ -22,16 +25,20 @@ vim.opt.wrapscan = false
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
-vim.opt.expandtab = true
+-- vim.opt.expandtab = true
 
-vim.cmd [[
-  let g:markdown_folding = 1
-  set path+=**
-]]
+-- vim.cmd [[
+--   let g:markdown_folding = 1
+--   set path+=**
+-- 
+-- 	augroup ranbow_lisp
+-- 	  autocmd!
+-- 		autocmd FileType clojure,scheme RainbowParentheses
+--   augroup end
+-- ]]
 -- 
 -- vim.cmd [[
 --   let g:vimtex_quickfix_open_on_warning = 0
 -- 
 --   autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 -- ]]
--- 

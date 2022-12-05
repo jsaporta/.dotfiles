@@ -83,7 +83,30 @@ fpath=(~/.zsh/gradle-completion $fpath)
 export PATH="$PATH:/home/jsaporta/.local/share/coursier/bin"
 
 
+
+
+
+
+
+# Go
+## Following official Go installation:
 export PATH=$PATH:/usr/local/go/bin
+## Following Learning Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 source /home/jsaporta/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 autoload -Uz compinit && compinit -i
@@ -100,3 +123,27 @@ PERL5LIB="/home/jsaporta/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/jsaporta/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/jsaporta/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/jsaporta/perl5"; export PERL_MM_OPT;
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/jsaporta/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+
+# opam configuration
+[[ ! -r /home/jsaporta/.opam/opam-init/init.zsh ]] || source /home/jsaporta/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+SPARK_HOME=/opt/spark
+
+
+
+# Idris
+IDRIS2_CG=racket
+export PATH="$HOME/.idris2/bin:$PATH"
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(idris2 --bash-completion-script idris2)"
