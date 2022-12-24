@@ -1,13 +1,17 @@
+require "options"
+require "keymaps"
 require "plugins"
-require "lsp"
-require "lualine-config"
+require "colorscheme"
+require "cmp-config"
 
--- vim.cmd[[set termguicolors]]
-vim.cmd[[colorscheme base16-tomorrow-night]]
 
-vim.g.mapleader = " "
 
-vim.opt.termguicolors = true
+
+
+
+-- require "lsp"
+-- require "lualine-config"
+
 
 -- Other options
 -- vim.opt.inccommand = "nosplit"
