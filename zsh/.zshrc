@@ -92,7 +92,7 @@ export PATH="$PATH:/home/jsaporta/.local/share/coursier/bin"
 ## Following official Go installation:
 export PATH=$PATH:/usr/local/go/bin
 ## Following Learning Go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/.local/go
 export PATH=$PATH:$GOPATH/bin
 
 
