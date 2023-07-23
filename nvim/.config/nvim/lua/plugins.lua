@@ -1,6 +1,6 @@
 -- Set up plugins using Packer: https://github.com/wbthomason/packer.nvim -----
 -------------------------------------------------------------------------------
--- PACKER BOOTSTRAPPING -------------------------------------------------------
+-- BOOTSTRAPPING --------------------------------------------------------------
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -23,6 +23,11 @@ local packer_bootstrap = ensure_packer()
 -- OTHER PACKAGES -------------------------------------------------------------
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 
 	if packer_bootstrap then
 		require('packer').sync()
