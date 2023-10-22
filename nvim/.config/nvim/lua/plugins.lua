@@ -20,9 +20,16 @@ end
 
 local packer_bootstrap = ensure_packer()
 
--- OTHER PACKAGES -------------------------------------------------------------
+-- PACKAGE STARTUP ------------------------------------------------------------
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
+
+
+	-- SPECIFY OTHER PACKAGES HERE ----------------------------------------
+	use 'lervag/vimtex'
+
+	-----------------------------------------------------------------------
+
 
 	if packer_bootstrap then
 		require('packer').sync()

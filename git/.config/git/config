@@ -11,3 +11,5 @@
 
 [tag]
   gpgSign = true
+[init]
+	defaultBranch = master
