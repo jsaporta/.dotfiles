@@ -24,13 +24,6 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
-<<<<<<< HEAD
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	})
-=======
-
 	-- SPECIFY OTHER PACKAGES HERE ----------------------------------------
 	use 'lervag/vimtex'
 
@@ -39,8 +32,6 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	-----------------------------------------------------------------------
-
->>>>>>> 1e696dea56db3469d9e671413ccef4c43c32dbde
 
 	if packer_bootstrap then
 		require('packer').sync()
