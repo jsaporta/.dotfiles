@@ -1,2 +1,5 @@
 require("plugins")
-require("lua-config")
+require("remap")
+-- require("lang-configs.lua")
+
+vim.opt.termguicolors = true

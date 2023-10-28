@@ -28,6 +28,10 @@ return require('packer').startup(function(use)
 	-- SPECIFY OTHER PACKAGES HERE ----------------------------------------
 	use 'lervag/vimtex'
 
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 	-----------------------------------------------------------------------
 
 
