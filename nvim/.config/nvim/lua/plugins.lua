@@ -31,6 +31,20 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
+	use 'nvim-treesitter/playground'
+	
+	use 'theprimeagen/harpoon'
+
+	use 'mbbill/undotree'
+
+	use {
+		'rose-pine/neovim', as = 'rose-pine'
+	}
 	-----------------------------------------------------------------------
 
 	if packer_bootstrap then
