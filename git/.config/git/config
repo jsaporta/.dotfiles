@@ -1,15 +1,12 @@
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[init]
+	defaultBranch = master
+[tag]
+	gpgSign = true
 [user]
 	name = Jason Saporta
 	email = jasons89@gmail.com
-  signingkey = jasons89@gmail.com
-
-[commit]
-  gpgsign = true
-
-[core]
-	editor = nvim
-
-[tag]
-  gpgSign = true
-[init]
-	defaultBranch = master
+	signingkey = jasons89@gmail.com

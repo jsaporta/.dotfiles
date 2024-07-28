@@ -24,29 +24,15 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
+	use 'neovim/nvim-lspconfig'
+
 	-- SPECIFY OTHER PACKAGES HERE ----------------------------------------
 	use 'lervag/vimtex'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.4',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
-	use 'nvim-treesitter/playground'
-	
-	use 'theprimeagen/harpoon'
-
-	use 'mbbill/undotree'
-
-	use 'tpope/vim-fugitive'
-
-	use {
-		'rose-pine/neovim', as = 'rose-pine'
-	}
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 	-----------------------------------------------------------------------
 
 	if packer_bootstrap then

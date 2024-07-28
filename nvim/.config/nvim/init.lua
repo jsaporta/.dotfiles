@@ -1,24 +1,34 @@
-require("plugins")
-require("remap")
-require("fugitive")
-require("harpoon-kbs")
+require('plugins')
 
 vim.opt.termguicolors = true
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
+require('lspconfig').clangd.setup{}
+require('lspconfig').hls.setup{}
 
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = { "c", "lua", "python", "vim", "vimdoc", "query" },
-	sync_install = false,
-	auto_install = true,
-	highlight = {
-		enable = true,
-	}
-}
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+
+
+
+
+
+
+
+
+
+
+-- FROM CHATGPT
+-- Create an autocommand group for Haskell settings
+vim.api.nvim_create_augroup('HaskellSettings', { clear = true })
+
+-- Add an autocommand to set spaces instead of tabs for Haskell files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'haskell',
+  group = 'HaskellSettings',
+  callback = function()
+    vim.bo.expandtab = true   -- Use spaces instead of tabs
+    vim.bo.shiftwidth = 4     -- Number of spaces for each indentation level
+    vim.bo.softtabstop = 4    -- Number of spaces a <Tab> counts for while editing
+    vim.bo.tabstop = 4        -- Number of spaces a <Tab> counts for
+  end,
+})
