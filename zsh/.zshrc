@@ -1,4 +1,4 @@
-# Enable history
+# HISTORY #####################################################################
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
@@ -7,6 +7,7 @@ export HISTFILE=~/.histfile
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
+# VI MODE #####################################################################
 # Enable vi mode
 bindkey -v
 bindkey "^?" backward-delete-char
@@ -33,8 +34,7 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-
-
+# ALIASES #####################################################################
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -47,9 +47,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -59,38 +56,28 @@ alias l='ls -CF'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias icat="kitty +kitten icat"
-
-# Manual changes begin here
+# MY ADDITONS #################################################################
+export PATH="/home/jsaporta/.local/bin:$PATH"
+export MANPAGER='nvim +Man!'
 alias envgo='source .venv/bin/activate'
-
+PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
+alias icat="kitty +kitten icat"
+## CUDA #######################################################################
+export CUDA_HOME=/usr/local/cuda
+export PATH=${CUDA_HOME}/bin:${PATH}
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+## NODE VERSION MANAGER #######################################################
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# unsetopt BEEP
-
-fpath=(~/.zsh/completion $fpath)
-fpath=(~/.zsh/gradle-completion $fpath)
-export PATH="$PATH:/home/jsaporta/.local/share/coursier/bin"
-
-
-# source /home/jsaporta/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
-# autoload -Uz compinit && compinit -i
-# zstyle ':completion:*' menu select
-# source /home/jsaporta/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
-
-PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
-
-
-
-# MY ADDITONS
-export PATH="/home/jsaporta/.local/bin:$PATH"
-
-## PYENV
+# LANGUAGES ###################################################################
+## C(++) ######################################################################
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+## GO #########################################################################
+export PATH=$PATH:/usr/local/go/bin
+## PYTHON #####################################################################
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-[ -f "/home/jsaporta/.ghcup/env" ] && source "/home/jsaporta/.ghcup/env" # ghcup-env
