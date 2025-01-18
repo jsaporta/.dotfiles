@@ -1,3 +1,6 @@
+# JAVASCRIPT/NODE
+node_modules/
+
 # PYTHON
 .ipynb_checkpoints/
 .venv/

@@ -24,6 +24,8 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
+	use 'neovim/nvim-lspconfig'
+
 	-- SPECIFY OTHER PACKAGES HERE ----------------------------------------
 	use 'neovim/nvim-lspconfig'
 
@@ -31,7 +33,6 @@ return require('packer').startup(function(use)
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
-
 	-----------------------------------------------------------------------
 
 	if packer_bootstrap then
